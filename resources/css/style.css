@@ -1,0 +1,585 @@
+/* =============== */
+/* BASIC SETUP */
+/* =============== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.6rem;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ==================================================== */
+/* REUSABLE COMPONANTS */
+/* =================================================== */
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+
+.row{
+    max-width: 117rem;
+    margin: auto;
+}
+.btn{
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 600;
+    word-spacing: .3rem;
+    padding: 1.5rem 6rem;
+    background-color: #333;
+    border-bottom: .3rem solid #222;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+.little-description{
+    width: 65rem;
+    font-size: 1.9rem;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    line-height: 2.8rem;
+    text-align: center;
+}
+h2::after{
+    content: "";
+    width: 9rem;
+    height: .4rem;
+    background: #14A58C;
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.box{
+    padding: 1rem;
+}
+.box p{
+    font-size: 1.6rem;
+    width: 80%;
+    line-height: 2.2rem;
+    margin: auto;
+}
+
+/* ==================================================== */
+/* HEADING CSS */
+/* =================================================== */
+h1{
+    font-size: 4.5rem;
+    color: #fff;
+    font-weight: 600;
+    line-height: 6rem;
+}
+h2{
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    word-spacing: .1rem;
+    position: relative;
+    text-align: center;
+}
+h3{
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+
+}
+h4{
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    color: #3C4761;
+    font-weight: 600;
+}
+h5{
+
+}
+
+/* ==================================================== */
+/* HERE HEADER CSS */
+/* =================================================== */
+
+.header-section{
+    background: linear-gradient(rgba(135, 80, 156, 0.9), rgba(135, 80, 156, 0.9)), url(img/hero-bg.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 85vh;
+}
+.header-section img{
+    width: 10rem;
+    float: left;
+    margin-top: 2rem;
+}
+.header-section .main-nav{
+    float: right;
+    margin-top: 2.5rem;
+}
+.header-section .main-nav li{
+    display: inline-block;
+    margin-left: .5rem;
+}
+.header-section .main-nav li:first-child{
+    margin-left: 0;
+}
+.header-section .main-nav li a:link,
+.header-section .main-nav li a:visited{
+    display: block;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: .7rem 1.5rem;
+    background-color: transparent;
+    border-radius: .3rem;
+    -webkit-border-radius: .3rem;
+    -moz-border-radius: .3rem;
+    -ms-border-radius: .3rem;
+    -o-border-radius: .3rem;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.header-section .main-nav li:hover a:link,
+.header-section .main-nav li:hover a:visited{
+    background: #643A79;
+}
+.active{
+    background: #643A79;
+    border-radius: .3rem;
+    -webkit-border-radius: .3rem;
+    -moz-border-radius: .3rem;
+    -ms-border-radius: .3rem;
+    -o-border-radius: .3rem;
+}
+/* STICKY NAVIGATION */
+.stickyNav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #87509C;
+    width: 100%;
+    padding: 1.5rem 0;
+    margin-top: 0;
+    z-index: 1;
+}
+.stickyNav .main-nav,
+.stickyNav img{
+    margin-top: 0;
+}
+
+.header-content{
+    max-width: 117rem;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: 15rem;
+}
+.header-section .btn-hero{
+    background-color: #EB7D4B;
+    border-bottom: .3rem solid #C86A40;
+    margin-top: 2rem;
+}
+
+
+/* MOBILE MENU CSS */
+
+.mobile-menu span{
+    color: #fff;
+    float: right;
+    position: relative;
+    top: 2rem;
+    font-size: 4rem;
+    display: none;
+    cursor: pointer;
+}
+.stickyNav .mobile-menu span{
+    top: 0;
+}
+.ovarlay-contents{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #000;
+    z-index: 1;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+.ovarlay-menu-items{
+    position: relative;
+    top: 20%;
+    text-align: center;
+}
+.ovarlay-menu-items a{
+    display: block;
+    font-size: 4rem;
+    color: #ddd;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    letter-spacing: .3rem;
+}
+.ovarlay-menu-items a:hover{
+    color: #fff;
+}
+.closebtn{
+    position: absolute;
+    right: 3rem;
+    color: #ddd;
+    top: 3rem;
+    font-size: 4rem;
+}
+.closebtn:hover{
+    color: #fff;
+}
+
+/* ==================================================== */
+/* HERE SERVICE CSS */
+/* =================================================== */
+
+.service-section{
+    background:linear-gradient(rgba(23, 194, 164, 0.9), rgba(23, 194, 164, 0.9)),url(img/services-bg.jpg) no-repeat center top;
+    background-size: cover;
+    text-align: center;
+    padding: 8rem 0;
+    color: #fff;
+}
+.service-section img{
+    height: 10rem;
+    width: auto;
+}
+
+/* ==================================================== */
+/* HERE TEAM SECTION CSS */
+/* =================================================== */
+
+.team-section{
+    background:linear-gradient(rgba(231, 241, 248, .9), rgba(231, 241, 248, .9)), url(img/team-bg.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 8rem 0;
+}
+.team-section h2{
+    color: #3C4761;
+}
+.team-section h2::after{
+    background-color: #C8D9E5;
+}
+.team-section img{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.team-section h3{
+    color: #3C4761;
+    margin-bottom: .5rem;
+}
+.team-section span{
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    color: #34BBE7;
+    font-weight: 600;
+}
+.team-section .box p{
+    color: #3C4761;
+}
+.social-profile {
+    margin-top: 3rem;
+}
+.social-profile ul{}
+.social-profile ul li{
+    display: inline-block;
+    margin: 0 .3rem;
+}
+.social-profile ul li a:link i::before{
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    background-color: #BDD1DF;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+.social-profile ul li a:link,
+.social-profile ul li a:visited{
+    color: #fff; 
+}
+.social-profile ul li:hover i::before{
+    background-color: #333 !important;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+
+/* ==================================================== */
+/* HERE SKILLS SECTION CSS */
+/* =================================================== */
+
+.skill-section{
+    background: linear-gradient(rgba(255,255,255, .9), rgba(255,255,255, .9)), url(img/skill-bg.jpg) no-repeat center top;
+    background-size: cover;
+    text-align: center;
+    padding: 8rem 0;
+}
+.skill-section h2{
+    color: #3C4761;
+}
+.skill-section h2::after{
+    background-color: #C8D9E5;
+}
+.skill-section h3{
+    margin-top: 1rem;
+    color: #3C4761;
+}
+.skill-section svg text{
+    fill: #3C4761;
+    font-size: 2rem;
+}
+.skill-section svg circle{
+    stroke-width: 6;
+}
+.web-design svg circle{
+    stroke: #30BAE7;
+}
+.web-development svg circle{
+    stroke: #D74680
+}
+.graphic-design svg circle{
+    stroke: #15C7A8;
+}
+.ui-ux svg circle{
+    stroke: #EB7D4B;
+}
+/* ==================================================== */
+/* HERE PORTFOLIO SECTION CSS */
+/* =================================================== */
+.portfolio-section{
+    background: linear-gradient(rgba(255, 221, 153, .9), rgba(255, 221, 153, .9)), url(img/portfolio-bg.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 8rem 0;
+}
+.portfolio-section h2::after{
+    background-color: #EBC985;
+}
+.portfolio-section h2{
+    color: #333;
+}
+.portfolio-section .little-description{
+    margin-bottom: 3rem;
+}
+.data-filter{
+    margin-bottom: 5rem;
+}
+.data-filter button{
+    padding: .5rem 2rem;
+    border: none;
+    margin: 0 .2rem;
+    background-color: #EBC985;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: .3rem;
+    -webkit-border-radius: .3rem;
+    -moz-border-radius: .3rem;
+    -ms-border-radius: .3rem;
+    -o-border-radius: .3rem;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+    cursor: pointer;
+}
+.data-filter button:hover{
+    background-color: #fff;
+}
+.data-filter button:focus{
+    outline: none;
+}
+.portfolio-section .col:nth-child(3){
+    margin-left: 0;
+}
+.portfolio-section .col:nth-child(3),
+.portfolio-section .col:nth-child(4) {
+    margin-top: 5rem
+}
+.data-filter .mixitup-control-active{
+    background-color: #fff;
+}
+/* ==================================================== */
+/* HERE ABOUT SECTION CSS */
+/* =================================================== */
+
+.about-section{
+    background: linear-gradient(rgba(215, 70, 128, .9), rgba(215, 70, 128, .9)), url(img/testimonial-bg.jpg) no-repeat center top;
+    background-size: cover;
+    padding: 8rem 0;
+    color: #fff;
+}
+.about-section h2::after{
+    background-color: #B73C6D;
+}
+.about-section .col:nth-child(3){
+    margin-left: 0;
+}
+.about-section .col:nth-child(3),
+.about-section .col:nth-child(4){
+    margin-top: 10rem
+}
+.about-section img{
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    float: left;
+    margin-bottom: 4rem;
+    margin-right: 4rem;
+}
+.client-review{
+    padding: 0 4rem;
+}
+.client-review p{
+    font-size: 2rem;
+    line-height: 2.8rem;
+    font-style: italic;
+}
+.client-review h3{
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+}
+.client-review span{
+  color: #F4B992;
+  font-weight: 600;
+}
+
+/* ==================================================== */
+/* HERE CONTACT SECTION CSS */
+/* =================================================== */
+.contact-section{
+    background: linear-gradient(rgba(60, 84, 153, .9), rgba(60, 84, 153, .9)), url(img/contact-bg.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    padding: 8rem 0;
+}
+.contact-section h2::after{
+    background-color: #273A71;
+}
+.contact-section .little-description{
+    width: 100%;
+}
+.contact-section form{
+    width: 60%;
+    margin: auto;
+}
+.contact-section form input,
+.contact-section form textarea{
+    width: 100%;
+    padding: 2rem 1.5rem;
+    border-radius: .3rem;
+    -webkit-border-radius: .3rem;
+    -moz-border-radius: .3rem;
+    -ms-border-radius: .3rem;
+    -o-border-radius: .3rem;
+    background-color: #273A71;
+    border: .1rem solid #273A71;
+    color: #fff;
+}
+.contact-section form input,
+.contact-section form textarea:focus{
+    outline: none;
+}
+.contact-section form textarea{
+    margin-top: 1rem;
+}
+.contact-section form ::placeholder{
+    color: #fff;
+    opacity: 1;
+}
+.btn-submit{
+    background: #2FB5E1;
+    border-color: #299EC5;
+    margin-top: 5rem;
+}
+
+/* ==================================================== */
+/* HERE FOOTER SECTION CSS */
+/* =================================================== */
+.footer-section{
+    background: #344B8E;
+    border-top: .2rem solid rgb(121, 121, 121);
+    padding: 3rem 0;
+    text-align: center;
+}
+.footer-social-icons ul{}
+.footer-social-icons ul li{
+    display: inline-block;
+    margin: 0 1.5rem;
+}
+.footer-social-icons ul li a{
+    display: block;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 600;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+.footer-social-icons ul li a:hover{
+    color: #3285BB;
+}
+.footer-social-icons .f-active a{
+    color: #3285BB;
+}
